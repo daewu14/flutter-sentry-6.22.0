@@ -1,0 +1,51 @@
+name: sentry_flutter_example
+description: Demonstrates how to use the sentry_flutter plugin.
+version: 6.22.0
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: '>=2.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sentry:
+  sentry_flutter:
+  sentry_dio:
+  sentry_logging:
+  universal_platform: ^1.0.0
+  feedback: ^2.0.0
+  provider: ^6.0.0
+  dio: ^4.0.0
+  logging: ^1.0.0
+  package_info_plus:
+    git:
+      url: https://github.com/daewu14/package-info-plus-1.4.2
+      ref: main
+  meta: ^1.3.0
+  path_provider: ^2.0.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  sentry_dart_plugin: ^1.0.0-beta.1
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/lorem-ipsum.txt
+    - assets/sentry-wordmark.png
+
+sentry:
+  upload_native_symbols: true
+  upload_source_maps: true
+  include_native_sources: true
+  project: sentry-flutter
+  org: sentry-sdks
+  wait_for_processing: true
+  commits: true
